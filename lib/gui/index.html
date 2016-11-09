@@ -18,40 +18,55 @@
     <script src="./app.js"></script>
   </head>
   <body ng-app="Etcher">
-    <header class="section-header" ng-controller="HeaderController as header">
-      <button class="button button-link" ng-click="header.openHelpPage()">
-        <span class="glyphicon glyphicon-question-sign"></span> Need Help?
-      </button>
+	<div class="drop-wrap" ng-controller="ImageSelectionController as image">
+	  <div class="drop-zone" os-dropzone="image.selectImage($file)">
+        <figure class="drop-overlay">
+          <svg-icon path="../../../assets/add-file.svg"
+            width="40px"
+            height="58px"></svg-icon>
+          <figcaption>
+            <p class="drag-caption-title">Drop your file here</p>
+            <p class="drag-caption-subtitle">
+              Supported file formats: zip, etch, gz, bz2, xz, img, iso, dsk, hddimg, raw
+            </p>
+          </figcaption>
+        </figure>
+		<header class="section-header" ng-controller="HeaderController as header">
+		  <button class="button button-link" ng-click="header.openHelpPage()">
+			<span class="glyphicon glyphicon-question-sign"></span> Need Help?
+		  </button>
 
-      <button class="button button-link" ui-sref="settings" hide-if-state="settings">
-        <span class="glyphicon glyphicon-cog"></span>
-      </button>
+		  <button class="button button-link" ui-sref="settings" hide-if-state="settings">
+			<span class="glyphicon glyphicon-cog"></span>
+		  </button>
 
-      <button class="button button-link" ui-sref="main" show-if-state="settings">
-        <span class="glyphicon glyphicon-chevron-left"></span> Back
-      </button>
-    </header>
+		  <button class="button button-link" ui-sref="main" show-if-state="settings">
+			<span class="glyphicon glyphicon-chevron-left"></span> Back
+		  </button>
+		</header>
 
-    <main class="wrapper" ui-view></main>
+		<main class="wrapper" ui-view></main>
 
-    <footer class="section-footer">
-      <svg-icon path="../../../assets/etcher.svg"
-        width="83px"
-        height="13px"
-        os-open-external="https://etcher.io"></svg-icon>
+		<footer class="section-footer">
+		  <svg-icon path="../../../assets/etcher.svg"
+			width="83px"
+			height="13px"
+			os-open-external="https://etcher.io"></svg-icon>
 
-      <span class="caption">
-        IS <span class="caption" os-open-external="https://github.com/resin-io/etcher">AN OPEN SOURCE PROJECT</span> BY
-      </span>
+		  <span class="caption">
+			IS <span class="caption" os-open-external="https://github.com/resin-io/etcher">AN OPEN SOURCE PROJECT</span> BY
+		  </span>
 
-      <svg-icon path="../../../assets/resin.svg"
-        width="79px"
-        height="23px"
-        os-open-external="https://resin.io?ref=etcher"></svg-icon>
+		  <svg-icon path="../../../assets/resin.svg"
+			width="79px"
+			height="23px"
+			os-open-external="https://resin.io?ref=etcher"></svg-icon>
 
-      <span class="caption footer-right"
-        manifest-bind="version"
-        os-open-external="https://github.com/resin-io/etcher/blob/master/CHANGELOG.md"></span>
-    </footer>
+		  <span class="caption footer-right"
+			manifest-bind="version"
+			os-open-external="https://github.com/resin-io/etcher/blob/master/CHANGELOG.md"></span>
+		</footer>
+	  </div>
+	</div>
   </body>
 </html>
