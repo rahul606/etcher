@@ -15,7 +15,7 @@
  */
 
 .modal-drive-selector-modal .modal-content {
-  width: 300px;
+  width: 400px;
   height: 320px;
 }
 
@@ -33,5 +33,9 @@
   .list-group-item-text {
     word-break: break-all;
   }
+}
+
+.modal-footer-warning {
+  text-align: center;
 }
 

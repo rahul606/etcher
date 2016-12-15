@@ -50,7 +50,17 @@
 </div>
 
 <div class="modal-footer">
-  <button class="button button-primary button-block"
+  <div class="modal-footer-warning"
+    ng-show="modal.state.hasDrive() && modal.state.isSystemDrive(modal.state.getDrive())">
+      Etcher has identified this as a system drive
+  </div>
+  <button class="button button-block"
+    ng-class="{ 'label-danger': modal.state.hasDrive() && modal.state.isSystemDrive(modal.state.getDrive()),
+                'button-primary': modal.state.hasDrive() && !modal.state.isSystemDrive(modal.state.getDrive()) }"
     ng-click="modal.closeModal()"
-    ng-disabled="!modal.state.hasDrive()">CONTINUE</button>
+    ng-disabled="!modal.state.hasDrive()">
+      CONTINUE
+      <i class="glyphicon glyphicon-alert"
+        ng-show="modal.state.hasDrive() && modal.state.isSystemDrive(modal.state.getDrive())"></i>
+  </button>
 </div>
