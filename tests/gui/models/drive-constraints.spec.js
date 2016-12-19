@@ -18,8 +18,8 @@ describe('Browser: SelectionState', function() {
       DriveConstraintsModel = _DriveConstraintsModel_;
     }));
 
-    it('should be an instance of `lib.src.DriveConstraints`', function() {
-      const DriveConstraints = require('../../../lib/src/drive-constraints');
+    it('should be an instance of `lib.shared.DriveConstraints`', function() {
+      const DriveConstraints = require('../../../lib/shared/drive-constraints');
       m.chai.expect(DriveConstraintsModel).to.be.an.instanceof(DriveConstraints);
     });
 

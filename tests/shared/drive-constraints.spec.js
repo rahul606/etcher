@@ -1,7 +1,7 @@
 'use strict';
 
 const m = require('mochainon');
-const DriveConstraints = require('../../lib/src/drive-constraints');
+const DriveConstraints = require('../../lib/shared/drive-constraints');
 
 describe('(new DriveConstraints())', function() {
 
